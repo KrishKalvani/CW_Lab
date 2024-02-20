@@ -1,0 +1,13 @@
+{
+    "name": "CW1 pet store PWA",
+    "icons":[
+        {
+            "src":"images/icon-store-512.png",
+            "sizes":"512x512",
+            "type": "image/png"
+        }
+    ],
+    "start_url": "afterSchool.html",
+    "display": "fullscreen",
+    "background_color": "#B12A34"
+}

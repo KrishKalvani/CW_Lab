@@ -6,7 +6,13 @@
     <script src="https://cdn.jsdelivr.net/npm/vue@2.7.14/dist/vue.js"></script> <!--this is the CDN link to connect to the vue.js devtools-->
     <link rel="stylesheet" href="../Coursework1/afterSchool.css"><!--link for CSS-->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous"/>
+    <link rel="manifest" href="afterSchool.webmanifest">
   </head><!--above is the link for using the font awesome cart icon-->
+  <script>
+    if('serviceWorker' in navigator) {
+        navigator.serviceWorker.register('service-worker.js');
+    }
+</script>
   <body>
     <div id="app">
       <div id="navigation" style="background-color: #110d78; ">
