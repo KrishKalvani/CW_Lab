@@ -1,5 +1,5 @@
 //we do this to know how to cache it
-var cacheName = 'AS-v1';
+var cacheName = 'AS-v2';
 var cacheFiles = [
     'afterSchool.html',
     'lessons.js',
