@@ -1,7 +1,7 @@
 //we do this to know how to cache it
 var cacheName = 'AS-v1';
 var cacheFiles = [
-    'index.html',
+    'afterSchool.html',
     'lessons.js',
     'afterSchool.webmanifest',
     'afterSchool.css',
