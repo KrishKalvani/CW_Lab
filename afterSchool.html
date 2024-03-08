@@ -8,11 +8,11 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous"/>
     <link rel="manifest" href="afterSchool.webmanifest">
   </head><!--above is the link for using the font awesome cart icon-->
-  <script>
+  <!-- <script>
     if('serviceWorker' in navigator) {
         navigator.serviceWorker.register('service-worker.js');
     }
-</script>
+</script> -->
   <body>
     <div id="app">
       <div id="navigation" style="background-color: #110d78; ">
@@ -148,6 +148,11 @@
       <p style="margin-left: 45%;">Web page made by Krish Kalvani</p>
     </div>
     <script src="../Coursework1/lessons.js"></script><!--link to JS file-->
+    <script>
+      if('serviceWorker' in navigator) {
+          navigator.serviceWorker.register('service-worker.js');
+      }
+  </script>
   </body>
   <!--end of html page-->
 </html>
