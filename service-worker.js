@@ -43,15 +43,39 @@ self.addEventListener('install', (e) => {
 
 
 //helps to work the app offline, here we are returning our file, if its therem otherwise if not, it will fetch the file from third party sources.
-self.addEventListener('fetch', function (e){
+// self.addEventListener('fetch', function (e){
+//     e.respondWith(
+//         caches.match(e.request).then(function (r){
+//             return r || fetch(e.request).then(function(response){
+//                 return caches.open(cacheName).then(function (cache){
+//                     cache.put(e.request, response.clone());
+//                     return response;
+//                 })
+//             })
+//         })
+//     )
+// })
+self.addEventListener('fetch', function(e) {
     e.respondWith(
-        caches.match(e.request).then(function (r){
-            return r || fetch(e.request).then(function(response){
-                return caches.open(cacheName).then(function (cache){
-                    cache.put(e.request, response.clone());
+        caches.match(e.request).then(function(r) {
+            return r || fetch(e.request).then(function(response) {
+                // Check if we received a valid response
+                if (!response || response.status !== 200 || response.type !== 'basic') {
                     return response;
-                })
-            })
+                }
+
+                // Clone the response
+                var responseToCache = response.clone();
+
+                // Open the cache and put the cloned response in it
+                return caches.open(cacheName).then(function(cache) {
+                    cache.put(e.request, responseToCache);
+                    return response;
+                });
+            }).catch(function(error) {
+                // Handle fetch errors
+                console.error('Error fetching and caching:', error);
+            });
         })
-    )
-})
+    );
+});
