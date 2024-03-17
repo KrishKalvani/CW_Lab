@@ -1,46 +1,32 @@
-body{ /*body css*/
+body {
     margin: 0;
-    background-color:#ff9900 ;
-    /* background: linear-gradient(to bottom, #ff9900, #ff66cc); */
+    background-color: #ff9900;
+    font-family: Arial, Helvetica, sans-serif;
 }
-#navigation{ /*navigation bar*/
-   
-    height:70px;
-    width:100%;
+
+/* Navigation bar */
+#navigation {
+    height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 10px;
 }
-#searchInput{ /*search bar in the nav bar*/
-    position: absolute;
-    margin-top: 15px;
-    margin-left: 35%;
-    width: 300px;
+
+#searchInput {
+    width: 100%;
+    max-width: 300px;
     height: 30px;
-    
     padding: 5px;
 }
 
-#sortPriceButtons{ /*positioning the sort price button*/
-    position: absolute;
-    margin-left:2%;
-    margin-top: -2%;
-}
-#sortSubButtons{ /*positioning the sort subject button*/
-    position: absolute;
-    margin-top: -2%;
-    margin-left: 28%;
-}
-
-#sortLocationButtons{ /*positioning the sort location button*/
-    position: absolute;
-    margin-top: -2%;
-    margin-left: 51%;
-
-}
-
-#sortSpacesButtons{
-    position: absolute;
-    margin-top: -2%;
-    margin-left: 74%;
-
+/* Sort Buttons */
+#sortPriceButtons,
+#sortSubButtons,
+#sortLocationButtons,
+#sortSpacesButtons {
+    display: inline-block;
+    margin: 10px 5px; /* Adjust space between buttons */
 }
 
 
@@ -159,35 +145,69 @@ body{ /*body css*/
     background-color: #9692f7;
 }
 
-  #lessonsGrid { /*this sets up the display of the lessons using grid, it arranges it as 5 lessons per row*/
+#lessonsGrid {
     display: grid;
-    grid-template-columns: repeat(5, 1fr); 
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* This makes the grid responsive */
     gap: 20px;
-    justify-content: center;
-  }
+    padding: 20px;
+}
 
-  #lessonCard { /*this sets up the border, size, and background color for each lesson*/
-    margin: 10px;
+#lessonCard {
     padding: 10px;
     border: 1px solid black;
     border-radius: 5px;
     text-align: center;
-    width: 250px;
-    height: 350px; 
     background-color: #e6edbe;
-    /* display:flex;
-    flex-direction: column; */
-  }
+}
 
-#footer{ /*footer at the bottom of the page*/
-    position: absolute;
-    /* margin-left: 50%; */
+/* ... other styles ... */
+
+#footer {
     background-color: #110d78;
     color: white;
-    font-size: larger;
+    text-align: center;
+    padding: 10px 0;
+    position: relative; /* Change to relative */
+    bottom: 0;
     width: 100%;
-    margin-top: 30%;
 }
+@media only screen and (max-width: 720px) {
+    /* Adjust styles for mobile here */
+
+    #navigation {
+        flex-direction: column;
+        height: auto;
+    }
+
+    #logo {
+        height: 100px; /* Adjust logo size */
+        margin-top: 0;
+        width: auto;
+    }
+
+    #welcomeText {
+        font-size: 1.5em; /* Smaller font size for mobile */
+    }
+
+    /* ... other styles ... */
+
+    #lessonsGrid {
+        grid-template-columns: 1fr; /* Stack the cards on small screens */
+    }
+
+    #lessonCard {
+        width: auto; /* Cards take full width */
+        height: auto; /* Adjust height */
+    }
+
+    /* ... other styles ... */
+
+    #footer {
+        margin-top: 20px; /* Add space before the footer */
+        position: relative; /* Footer at the end of the content */
+    }
+}
+
 
 #credentialHeading{ /*in the checkout page, we have the main heading to prompt the user to please enter their credentials. CSS for that*/
     
